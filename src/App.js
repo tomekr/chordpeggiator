@@ -5,13 +5,13 @@ import { Chord } from "tonal";
 import './App.css';
 
 
-function generateFretboardNotes(key) {
+function generateFretboardNotes(key, chord) {
   // react-fretboard helper to generate a list of fretboard note objects that can
   // be passed to the selectedNotes property of the Fretboard component
   const fretboardNotesInScale = scaleNotes(key, 'major');
 
   // Use the Tonal library to generate the list of chord notes in the scale
-  const chordNotesInScale = Chord.notes(`${key}M`);
+  const chordNotesInScale = Chord.notes(chord);
 
   // Mark chord notes with a status of "chordNote" so they can be highlighted in
   // green 
@@ -25,7 +25,7 @@ function generateFretboardNotes(key) {
   return fretboardNotes;
 }
 
-const fretboardNotes = generateFretboardNotes('F#');
+const fretboardNotes = generateFretboardNotes('C', 'GM');
 
 function App() {
   return (
