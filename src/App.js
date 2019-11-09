@@ -15,7 +15,7 @@ const chordNotesInScale = Chord.notes('CM');
 // green 
 const fretboardNotes = fretboardNotesInScale.map(fretboardNote => {
   if (chordNotesInScale.includes(fretboardNote.note)) {
-    fretboardNote.status = "chordNote";
+    return { ...fretboardNote, status: "chordNote" }
   }
   return fretboardNote
 });
