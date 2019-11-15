@@ -34,7 +34,7 @@ function App() {
         <Fretboard
           skinType="strings"
           selectedNotes={fretboardNotes}
-          theme={{ statusMap: { chordNote: '#b9e59e' }}}
+          theme={{ statusMap: { chordNote: '#b9e59e', notInScaleNote: '#ffcccb' }}}
         />
       </div>
     </div>
